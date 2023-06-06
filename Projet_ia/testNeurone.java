@@ -4,7 +4,8 @@ public class testNeurone
 	public static void main(String[] args)
 	{
 		// Tableau des entrées de la fonction ET (0 = faux, 1 = vrai)
-		final float[][] entrees = {{0.1f, 0.1f}, {0.1f, 0.9f}, {0.9f, 0.1f}, {0.9f, 0.9f}};
+		final float[][] entrees = {{0,0}, {0,1}, {1,0}, {1,1}};
+		final float[][] entrees2 = {{0.1f, 0.1f}, {0.1f, 0.9f}, {0.9f, 0.1f}, {0.9f, 0.9f}};
 		
 		// Tableau des sorties de la fonction ET
 		final float[] resultats = {0, 1, 1, 1};
@@ -41,6 +42,12 @@ public class testNeurone
 			n.metAJour(entree);
 			// On affiche cette sortie
 			System.out.println("Entree "+i+" : "+n.sortie());
+		}
+		for (int i = 0; i < entrees2.length; ++i)
+		{
+			final float[] entree = entrees2[i];
+			n.metAJour(entree);
+			System.out.println("Entree2 "+i+" : "+n.sortie());
 		}
 	}
 }

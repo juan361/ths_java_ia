@@ -25,8 +25,13 @@ public class Son
 	public float[] donnees() {return donnees;}
 	public float[] bloc_deTaille(final int numeroBloc, final int tailleBloc)
 	{
+		//System.out.println(numeroBloc);
 		final int from = numeroBloc*tailleBloc;
+		//System.out.println(from);
 		final int to = from+tailleBloc;
+		if(to > donnees().length) {
+			//System.out.println("TO est hors de portée");
+		}
 		return Arrays.copyOfRange(donnees, from, to);
 	}
 
