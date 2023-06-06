@@ -1,3 +1,5 @@
+
+
 import java.util.Arrays;
 import java.io.File;
 import java.nio.ByteBuffer;
@@ -69,8 +71,9 @@ public class Son
 		{
 			System.out.println("Lecture du fichier WAV "+args[0]);
 			Son son = new Son(args[0]);
-			System.out.println("Fichier "+args[0]+" : "+son.donnees().length+" échantillons à "+son.frequence()+"Hz");
-			System.out.println("Bloc 1 : "+son.bloc_deTaille(1, 512).length+" échantillons à "+son.frequence()+"Hz");
+			System.out.println("Fichier "+args[0]+" : "+son.donnees().length+" echantillons a "+son.frequence()+"Hz");
+			for (int i = 1; i*4096 < son.donnees().length; i++)
+				System.out.println("Bloc "+i+" : "+son.bloc_deTaille(i, 4096).length+" echantillons a "+son.frequence()+"Hz");
 		}
 		else
 			System.out.println("Veuillez donner le nom d'un fichier WAV en paramètre SVP.");

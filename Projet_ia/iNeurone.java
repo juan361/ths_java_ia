@@ -1,3 +1,4 @@
+
 public interface iNeurone
 {
 	// Calcule la valeur de sortie en fonction des entrées, des poids synaptiques,

@@ -1,17 +1,18 @@
+
 public class testNeurone
 {
 	public static void main(String[] args)
 	{
 		// Tableau des entrées de la fonction ET (0 = faux, 1 = vrai)
-		final float[][] entrees = {{0, 0}, {0, 1}, {1, 0}, {1, 1}};
+		final float[][] entrees = {{0.1f, 0.1f}, {0.1f, 0.9f}, {0.9f, 0.1f}, {0.9f, 0.9f}};
 		
 		// Tableau des sorties de la fonction ET
 		final float[] resultats = {0, 1, 1, 1};
 		
 		// On crée un neurone taillé pour apprendre la fonction ET
 		//final iNeurone n = new NeuroneHeavyside(entrees[0].length);
-		//final iNeurone n = new NeuroneSigmoide(entrees[0].length);
-		final iNeurone n = new NeuroneReLU(entrees[0].length);
+		final iNeurone n = new NeuroneSigmoide(entrees[0].length);
+		//final iNeurone n = new NeuroneReLU(entrees[0].length);
 		
 		System.out.println("Apprentissage…");
 		// On lance l'apprentissage de la fonction ET sur ce neurone

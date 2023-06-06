@@ -1,3 +1,4 @@
+
 public abstract class Neurone implements iNeurone {
 	// Coefficient de mise à jour des poids,
 	// commun (static) à tous les neurones

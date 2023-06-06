@@ -1,15 +1,15 @@
 class FFTCplx
 {
 	public final static int TailleFFTtest = 16;
-	public final static double Periode = 1;
+	public final static double Periode = 3;
 
-// 	private int taille;
-// 
-// // Indiquer la taille permettra des optimisations par la suite
-// 	public FFTCplx(int taille)
-// 	{
-// 		this.taille = taille;
-// 	}
+private int taille;
+ 
+ // Indiquer la taille permettra des optimisations par la suite
+ 	public FFTCplx(int taille)
+ 	{
+ 		this.taille = taille;
+ 	}
 
 	// Sous-signal obligatoirement découpé par pas de deux
 	private static Complexe[] demiSignal(Complexe[] signal, int depart)
@@ -20,6 +20,7 @@ class FFTCplx
 		return sousSignal;
 	}
 	
+	public int getTaille (){return taille;}
 	public static Complexe[] appliqueSur(Complexe[] signal)
 	{
 		Complexe[] trSignal = new Complexe[signal.length];
@@ -53,8 +54,8 @@ class FFTCplx
 		Complexe[] resultat = appliqueSur(signalTest);
 		// On affiche les valeurs du résultat
 		for (int i = 0; i < resultat.length; ++i) {
-			System.out.print(i+" : ("+(float)resultat[i].reel()+" ; "+(float)resultat[i].imag()+"i)");
-			System.out.println(", ("+(float)resultat[i].mod()+" ; "+(float)resultat[i].arg()+" rad)");
+			System.out.printf("%3d : (%4.2f ; %4.2fi)", i,(float)resultat[i].reel(),(float)resultat[i].imag());
+			System.out.printf(", (%4.2f ; %4.2f rad)\n",(float)resultat[i].mod(),(float)resultat[i].arg());
 		}
 	}
 }

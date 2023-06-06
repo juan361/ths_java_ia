@@ -1,3 +1,4 @@
+
 public class NeuroneHeavyside extends Neurone
 {
 	// Fonction d'activation d'un neurone (peut facilement être modifiée par héritage)
